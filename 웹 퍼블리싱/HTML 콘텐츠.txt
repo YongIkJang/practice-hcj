@@ -1,0 +1,30 @@
+1. 이미지 넣기
+<img src = "poster.jpg" alt = "영화 명량 포스터" width = "300" height = "428">
+
+이미지 주소를 넣는 src
+이미지에 대한 설명을 적는 alt
+이미지의 크기를 정하는 width와 height으로 이루어짐.
+
+2. 비디오 넣기
+<video src = "codeit-logo.mp4" autoplay muted controls width = "300" height = "480"></video>
+
+비디오 주소를 넣는 src
+비디오를 웹에 들어가자 마자 실행해주기 위한 autoplay 
+음소거 옵션 muted (chrome은 autoplay를 쓸거면 muted는 무조건 써줘야함)
+비디오 설정하기 위한 창을 보여주기 위한 controls
+width와 height는 크기 지정
+
+3. 오디오 넣기
+<audio src= "codeit-logo.mp3" controls></audio>
+
+오디오 주소를 넣는 src
+오디오도 autoplay 성질이 있음.
+오디오도 controls를 넣어줘야 설정 창이 나옴.
+
+4. 다른 HTML 파일 넣기 => 인라인 프레임 <iframe>
+<iframe src="banner.html" width="750" height="135">
+
+다른 HTML 문서를 문서 안에 집어 넣을때 사용.
+src 로 불러올 문서의 경로를 지정해주면 됨.
+width와 height 속성 지정 가능
+

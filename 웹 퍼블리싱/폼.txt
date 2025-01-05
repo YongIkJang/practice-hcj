@@ -1,0 +1,131 @@
+폼(Form) == 내용을 적는 모든 부분
+인풋(Input) == 내용을 적는 칸
+라벨(Label) == 각 인풋 옆에 붙은 이름
+버튼(Button)
+
+인풋의 여러 종류 : 
+1. 문자
+2. 숫자
+3. 비밀번호
+4. 라디오
+5. 체크박스 
+6. 버튼
+
+폼을 만들기 위해서는 
+<form> 태그 활용
+
+입력을 받기 위해서는
+<input> 태그 활용
+
+여러가지를 설명하기 위해서는
+<label> 태그 활용 
+
+<form>
+    <label>
+        <input>
+    </label>
+</form>
+
+이렇게 input에 label이 감싸고 있으면
+label을 눌러도 input에 커서가 생김.
+부모 태그 - 자식 태그로 만들지 않고 간단하게 동등하게 행동하게 만들려면
+
+<form>
+    <label for = "signup-email">이메일</label>
+    <input id = "signup-email">
+</form>
+
+label의 for과 input의 id를 매칭 시키면 됨.
+
++ 추가정보     <input id = "signup-email" name = "email">이라고 설정할 경우
+            form 태그가 데이터를 전송할때 각 데이터의 이름으로 쓰는게 name 속성임.
+            input에 결과가 url ~~ .html?email=test ~~ 이렇게 나옴. => 쿼리 문자열을 바꿔서 웹 페이지 이동
+
+만약에 비밀번호를 입력할 경우 <input id = "signup-email" name = "email" type == "password">이라고 설정할 경우
+****로 대체해서 나옴. name은 아무거나 사용해도 되지만 type은 정해져있음.
+
+button을 만들기 위해서 
+<button> 태그 활용
+
+    form 태그 안에 button 태그를 추가하면 기본적으로 버튼을 눌렀을 때 전송이 된다.
+    버튼의 동작을 바꾸고 싶으면 type을 바꾸면 됨. default = "submit" 만약 type = "button"을 만들면 아무 동작 x reset은 초기화
+
+
+input 태그의 여러 type 
+
+1. checkbox - 한 항목만 선택하는 경우 
+ <input name="agreement" type="checkbox">
+
+2. checkbox - 여러 항목
+name은 동일하게 value는 다르게 설정
+
+    <label for="film">좋아하는 영화 장르</label>
+    <label>
+    <input type="checkbox" name="film" value="action">
+    액션
+    </label>
+    <label>
+    <input type="checkbox" name="film" value="comedy">
+    코미디
+    </label>
+
+    이럴 경우 두가지를 선택하면 쿼리 문자열 &film=action&film=comedy 이렇게 전송된다.
+
+3. 날짜 date - 선택한 날짜로 값을 지정 가능
+    <input name="birthdate" type="date">
+
+4. 파일 file - 파일을 선택할 수 있는 인풋
+    <input name="birthdate" type="date">
+
+    accept 라는 속성을 통해 허용할 파일 확장자들을 정해 줄 수 있음.
+    <input name="avatar" type="file" accept=".png,.jpg">
+
+    multiple 라는 참/ 거짓 속성을 사용해 여러개 나 한개만 선택하도록 지정 가능
+    <input name="photos" type="file" multiple> <!-- 여러 개 선택 가능 -->
+    <input name="avatar" type="file"> <!-- 한 개만 선택 가능 -->
+
+5. 이메일 email - 버튼을 눌러서 폼을 전송할 때 올바른 이메일 형식인지 자동으로 검사 
+    <input name="email" type="email">
+
+6. 숫자 number - 숫자를 입력하고 최소 최대 값이나 버튼을 눌렀을때 증가 감소할 양을 지정 가능
+    <input type="number">
+
+    <!-- 100에서 1000사이 -->
+    <input type="number" min="100" max="1000">
+
+    <!-- 100에서 1000사이, 버튼을 눌렀을 때 100씩 증가, 감소 -->
+    <input type="number" min="100" max="1000" step="100">
+
+7. 라디오 radio - 동그란 선택 버튼 == 체크박스와 다르게 여러 항목중 하나 항목만 선택 가능
+
+    value 속성과 같이 사용하면, 같은 name을 가진 <input> 태그들 중에, 선택한 <input>의 value 값을 입력하도록 할 수 있다. 
+    예를 들어서 아래 코드에서 "좋음"을 선택하면 feeling의 값으로 3이라는 값이 들어가게 된다.
+
+    <input id="bad" name="feeling" value="1" type="radio">
+    <label for="bad">나쁨</label>
+    <input id="soso" name="feeling" value="2" type="radio">
+    <label for="soso">보통</label>
+    <input id="good" name="feeling" value="3" type="radio">
+    <label for="good">좋음</label>
+
+
+8. 범위 range - 범위 안에서 선택할 수 있는 인풋
+    
+<label for="signup-feeling">현재 기분</label>
+<input id="signup-feeling" name="feeling" min="1" max="10" type="range">
+
+9. 옵션 선택 select - 미리 정해져 있는 여러 값들 중에서 하나를 선택할 수 있는 태그 
+    <select> 태그 안에 <option> 태그를 value와 함께 사용하면 된다. 예를 들어서 아래 코드에서 드라마를 선택하면 genre의 값이 drama가 된다.
+        <label for="genre">장르</label>
+
+        <select id="genre" name="genre">
+
+        <option value="korean">한국 영화</option>
+        <option value="foreign">외국 영화</option>
+        <option value="drama">드라마</option>
+        <option value="documentary">다큐멘터리</option>
+        <option value="vareity">예능</option>
+    </select>
+
+10. 긴글 textarea - 긴 글을 입력할 수 있는 인풋. <input> 태그와 달리 반드시 종료 태그(</textarea>)를 써 주어야 한다.
+    <textarea name="content"></textarea>

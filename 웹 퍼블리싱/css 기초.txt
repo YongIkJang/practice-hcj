@@ -1,0 +1,28 @@
+요소:
+font-size: 20px => 글자 크기
+font-weight => 글자 굵기 (100~900)
+
+기본적으로 좌측 정렬
+text-align: center => 중앙 정렬로 변경(left, right 가능)
+
+이미지랑 본문 크기
+style = " width: 700px; height:375px"
+이것은 크기가 고정이다.
+가변적으로 하고 싶은 경우
+style = "width:100%"
+
+글자끼리 너무 붙어 있는 경우 
+padding 값 설정을 통해 태그 안쪽에 여백을 줄 수 있음
+
+style = "padding:20px 40px" 세로로 20px 가로로 40px 설정
+
+바깥 여백을 설정하고 싶으면 margin 태그 활용
+margin: 0 auto => 알아서 가로로 맞춰서 들어가라
+
+미리보기 설정하는 방법 - open graph
+<meta property = "og:title" content= " 속성에는 오픈 그래프 항목에 맞는 내용"
+<meta property = "og:url" content = "">
+<meta property = "og:type" content = "">
+<meta property = "og:image" content = "">
+<meta property = "og:description" content = "">
+

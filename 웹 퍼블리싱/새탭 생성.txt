@@ -1,0 +1,11 @@
+원래는 현재 페이지에서 이동
+<a href = "www.naver.com"> 네이버 </a>
+<a href = "www.naver.com" target= "_self"> 네이버 새탭</a>
+새로운 탭에서 열리게 하고 싶다면
+<a href = "www.naver.com" target= "_blank"> 네이버 새탭</a>
+
+원하는 이름도 가능
+<a href = "www.naver.com" target= "movie"> 네이버 새탭</a>
+이렇게 내가 원하는 이름을 맞춘후에 
+<a href = "www.daum.net" target= "movie"> 네이버 새탭</a>
+다른 것도 똑같은 이름을 사용할 경우 전에 새롭게 열린 창에서 수정이 됨.
